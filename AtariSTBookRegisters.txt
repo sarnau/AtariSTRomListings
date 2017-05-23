@@ -1,0 +1,60 @@
+Atari ST Book Specialities
+
+YM Port A
+Bit 0 - Side Select (S0SEL)
+Bit 1 - Disk 0 Select (D0SEL)
+Bit 2 - Disk 1 Select (D1SEL)
+Bit 3 - MAX241 Pin 20 (TI3) - RS232 RTS (/MFPRTS)
+Bit 4 - MAX241 Pin 6 (TI2) - RS232 DTR (/MFPDTR)
+Bit 5 - Centronics Strobe (STROBE)
+Bit 6 - IDE Reset (IDERESET)
+Bit 7 - FDD Dense Selection (FDD_DENSE_SEL)
+
+Autovector Interrupt Level 7 /POWER FAIL (NMI)
+
+MFP Input Pins
+Bit 7 - Power Alarms (Power Alarms) (POWER_ALARMS-) = (/SRCLOW | /RTC_ALARM | /POWERON)
+Bit 6 - MAX241 Pin 22 (RD4) - RS232 CD (/MFPRI)
+Bit 5 - XDISKINT
+Bit 4 - KTDK (VBL) (KTOK)
+Bit 3 - XBLTINT
+Bit 2 - MAX241 Pin 26 (RD3) - RS232 CTS (/MFPCTS)
+Bit 1 - MAX241 Pin 5 (RD2) - RS232 DCD (/MFPCD)
+Bit 0 - Centronics Busy (BUSY)
+
+$D0000
+$D0004
+
+$FF820B
+Bit 0: 0: enable combo -> shadow controller video transfer, 1: disable combo -> shadow controller video transfer
+
+$FF827E
+Bit 0 - 0: Shadow Chip OFF
+Bit 1 - 0: /SHIFTER_OFF output (Unused in STBook)
+Bit 2 - 0: POWER_OFF (Turns off main VCC when high)
+Bit 3 - 0: /22ON output (turns off LCD Bias when HIGH)
+Bit 4 - 0: REFRESH_MACHINE output (turns on refresh controller)
+Bit 5 - 0: RS-232_OFF output (turns off +/- 10 generator)
+Bit 6 - 0: (Unused in STBook)
+Bit 7 - 0: MTR_POWER_ON (turns on IDE drive motor supply)
+
+$FF9200 (Configuration/Signal register)
+Bit 0 - 0: Power Button pressed /(POWER_SWITCH)
+Bit 1 - 0: Top is closed /(TOP_CLOSED)
+Bit 2 - 0: RTC Alarm triggered /(RTC_ALARM)
+Bit 3 - 0: “Common Source” voltage level below 7.2V /(SOURCE_DEAD) - triggers an NMI
+Bit 4 - 0: "Common Source” voltage level below 8.8V /(SOURCE_LOW)
+Bit 5 - 0: External Modem (Pin 10 on J204) /(MODEM_WAKE)
+Bit 6 - Reserved (always 1)
+Bit 7 - 0: Triggered from the Expansion Port /(EXPANSION_WAKE)
+Bit 8 - Reserved
+Bit 9 - Reserved
+Bit 10 - Reserved
+Bit 11 - Reserved
+Bit 12 - Reserved
+Bit 13 - SELF TEST (?)
+Bit 14 - LOW SPEED FLOPPY
+Bit 15 - DMA AVAILABLE
+
+$FF9210 8-bit Common Power Voltage Level in 100mV steps
+$FF9214 8-bit Reference Voltage Level in 100mV steps
