@@ -13,14 +13,14 @@ Bit 7 - FDD Dense Selection (FDD_DENSE_SEL)
 Autovector Interrupt Level 7 /POWER FAIL (NMI)
 
 MFP Input Pins
-Bit 7 - Power Alarms (Power Alarms) (POWER_ALARMS-) = (/SRCLOW | /RTC_ALARM | /POWERON)
-Bit 6 - MAX241 Pin 22 (RD4) - RS232 CD (/MFPRI)
-Bit 5 - XDISKINT
-Bit 4 - KTDK (VBL) (KTOK)
-Bit 3 - XBLTINT
-Bit 2 - MAX241 Pin 26 (RD3) - RS232 CTS (/MFPCTS)
-Bit 1 - MAX241 Pin 5 (RD2) - RS232 DCD (/MFPCD)
 Bit 0 - Centronics Busy (BUSY)
+Bit 1 - MAX241 Pin 5 (RD2) - RS232 DCD (/MFPCD)
+Bit 2 - MAX241 Pin 26 (RD3) - RS232 CTS (/MFPCTS)
+Bit 3 - XBLTINT
+Bit 4 - KTDK (VBL) (KTOK)
+Bit 5 - XDISKINT
+Bit 6 - MAX241 Pin 22 (RD4) - RS232 CD (/MFPRI)
+Bit 7 - Power Alarms (Power Alarms) (POWER_ALARMS-) = (/SRCLOW | /RTC_ALARM | /POWERON)
 
 $D0000
 $D0004
@@ -28,7 +28,7 @@ $D0004
 $FF820B
 Bit 0: 0: enable combo -> shadow controller video transfer, 1: disable combo -> shadow controller video transfer
 
-$FF827E
+$FF827F
 Bit 0 - 0: Shadow Chip OFF
 Bit 1 - 0: /SHIFTER_OFF output (Unused in STBook)
 Bit 2 - 0: POWER_OFF (Turns off main VCC when high)
